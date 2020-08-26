@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './componentes/menu.component';
+import { AcordeonComponent } from './componentes/acordeon/acordeon.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    AcordeonComponent
   ],
   imports: [
     BrowserModule
