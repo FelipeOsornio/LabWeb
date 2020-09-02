@@ -7,6 +7,8 @@ import {EncabezadoComponent} from './componentes/comunes/encabezado/encabezado.c
 import {PrincipalComponent} from './componentes/principal/principal.component';
 import {AcercadeComponent} from './componentes/acercade/acercade.component';
 import {ConsolasComponent} from './componentes/consolas/consolas.component';
+import { Ps4Component } from './componentes/ps4/ps4.component';
+import { NswitchComponent } from './componentes/nswitch/nswitch.component';
 import {APP_ROUTING} from './app.routes';
 
 @NgModule({
@@ -15,7 +17,9 @@ import {APP_ROUTING} from './app.routes';
     EncabezadoComponent,
     PrincipalComponent,
     AcercadeComponent,
-    ConsolasComponent
+    ConsolasComponent,
+    Ps4Component,
+    NswitchComponent
   ],
   imports: [
     BrowserModule,

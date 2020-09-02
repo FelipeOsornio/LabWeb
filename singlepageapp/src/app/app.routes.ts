@@ -4,6 +4,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {PrincipalComponent} from './componentes/principal/principal.component';
 import {AcercadeComponent} from './componentes/acercade/acercade.component';
 import {ConsolasComponent} from './componentes/consolas/consolas.component';
+import {Ps4Component} from './componentes/ps4/ps4.component';
+import {NswitchComponent} from './componentes/nswitch/nswitch.component';
 
 const APP_ROUTES: Routes = [
 
@@ -11,6 +13,8 @@ const APP_ROUTES: Routes = [
   {path: 'principal', component: PrincipalComponent},
   {path: 'acercade', component: AcercadeComponent},
   {path: 'consolas', component: ConsolasComponent},
+  {path: 'consolas/nswitch', component: NswitchComponent},
+  {path: 'consolas/ps4', component: Ps4Component},
   {path: '**', pathMatch: 'full', redirectTo: 'principal'}
 ];
 
