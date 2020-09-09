@@ -12,4 +12,8 @@ export class ConsolasComponent implements OnInit {
         this.consolas = this.consolasService.obtieneConsolas();
         console.log(this.consolas);
     }
+
+    obtieneConsola(id: string): Consola {
+        return this.consolas[id];
+    }
 }
