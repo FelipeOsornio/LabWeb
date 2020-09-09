@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {ConsolasService} from '../../servicios/consola.service';
+import {ConsolasService} from './servicios/consola.service';
 import { AppComponent } from './app.component';
 import { EncabezadoComponent } from './componentes/comunes/encabezado/encabezado.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
@@ -26,7 +26,9 @@ import { JuegoComponent } from './componentes/juego/juego.component';
     BrowserModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+      ConsolasService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
