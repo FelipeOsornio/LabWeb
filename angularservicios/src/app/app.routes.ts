@@ -15,9 +15,8 @@ const APP_ROUTES: Routes = [
   { path: 'acercade', component: AcercadeComponent },
   { path: 'consolas', component: ConsolasComponent },
   { path: 'infoconsola/:id',component: InfoconsolaComponent},
-  { path: 'consolas/infoconsola', component: InfoconsolaComponent },
-  { path: 'consolas/infoconsola/juegosconsola', component: JuegosconsolaComponent },
-  { path: 'consolas/infoconsola/juegosconsola/juego', component: JuegoComponent },
+  { path: 'juegosconsola/:shortcut', component: JuegosconsolaComponent },
+  { path: 'juego/:consola/:id', component: JuegoComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'principal' }
 
 ];

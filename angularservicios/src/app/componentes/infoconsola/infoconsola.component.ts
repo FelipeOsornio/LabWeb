@@ -3,7 +3,8 @@ import {ActivatedRoute} from '@angular/router';
 import {ConsolasService, Consola} from '../../servicios/consola.service';
 
 @Component({
-    selector: 'app-infoconsola', templateUrl: './infoconsola.component.html',
+    selector: 'app-infoconsola',
+    templateUrl: './infoconsola.component.html',
     styleUrls: ['./infoconsola.component.css']
 })
 export class InfoconsolaComponent implements OnInit {
