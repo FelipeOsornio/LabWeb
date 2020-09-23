@@ -22,6 +22,7 @@ const APP_ROUTES: Routes = [
   {path: 'juegosconsola/:id', component: JuegosconsolaComponent},
   {path: 'juego/:idConsola/:idJuego', component: JuegoComponent},
   {path: 'resconsolas/:palabrasBusqueda', component: ResconsolasComponent},
+  {path: 'resconsolas/:juego/:palabrasBusqueda', component: ResconsolasComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'principal'}
 
 ];

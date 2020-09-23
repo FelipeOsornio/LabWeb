@@ -17,9 +17,16 @@ export class ResconsolasComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-      console.log(params['palabrasBusqueda']);
+      console.log(params['palabrasBusqueda'], params['juego']);
       this.palabrasBusqueda = params['palabrasBusqueda'];
-      this.consolas = this.consolasService.buscarConsolas(this.palabrasBusqueda);
+
+      this.consolas = []
+      if (params['juego']) {
+        this.consolas = this.consolasService.buscarJuegos(this.palabrasBusqueda);
+      } else {
+        this.consolas = this.consolasService.buscarConsolas(this.palabrasBusqueda);
+      }
+
       console.log(this.consolas);
     });
   }

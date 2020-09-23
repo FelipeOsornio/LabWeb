@@ -17,4 +17,8 @@ export class EncabezadoComponent implements OnInit {
   buscarConsolas(palabras: string) {
     this.router.navigate(['/resconsolas', palabras]);
   }
+
+  buscarJuegos(palabras: string) {
+    this.router.navigate(['/resconsolas', "juego", palabras])
+  }
 }

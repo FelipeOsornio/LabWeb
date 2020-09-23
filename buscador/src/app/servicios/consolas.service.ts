@@ -144,6 +144,21 @@ export class ConsolasService {
     return resultadoConsolas;
   }
 
+  buscarJuegos(palabras: string): Juego[] {
+    let resultadoJuegos: Juego[] = [];
+
+    this.consolas.forEach((consola) => {
+      consola.juegos.forEach((juego) => {
+        let nombreJuego = juego.nombre.toLowerCase();
+        if (nombreJuego.indexOf(palabras) >= 0) {
+          resultadoJuegos.push(juego);
+        }
+      })
+    })
+
+    return resultadoJuegos;
+  }
+
 }
 
 export interface Consola {
@@ -152,4 +167,11 @@ export interface Consola {
   caracteristicas: string;
   imagen: string;
   juegos: any;
+}
+
+export interface Juego {
+  imagen: string;
+  nombre: string;
+  developer: string;
+  lanzamiento: string;
 }
