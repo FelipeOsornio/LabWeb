@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {ReactiveFormsModule, FormsModule} from '@angular/forms';
-import {CommonModule} from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { EncabezadoComponent } from './componentes/comunes/encabezado/encabezado.component';
@@ -13,8 +11,6 @@ import { InfoconsolaComponent } from './componentes/infoconsola/infoconsola.comp
 import { JuegosconsolaComponent } from './componentes/juegosconsola/juegosconsola.component';
 import { JuegoComponent } from './componentes/juego/juego.component';
 import { ConsolasService } from './servicios/consolas.service';
-import { ResconsolasComponent } from './componentes/buscador/resconsolas/resconsolas.component';
-import { BlogComponent } from './componentes/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -25,16 +21,11 @@ import { BlogComponent } from './componentes/blog/blog.component';
     ConsolasComponent,
     InfoconsolaComponent,
     JuegosconsolaComponent,
-    JuegoComponent,
-    ResconsolasComponent,
-    BlogComponent
+    JuegoComponent
   ],
   imports: [
     BrowserModule,
-    CommonModule,
-    APP_ROUTING,
-    FormsModule,
-    ReactiveFormsModule
+    APP_ROUTING
   ],
   providers: [
     ConsolasService
