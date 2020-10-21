@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-let routes = require('./studentCollectionRoutes');
+let routes = require('./collectionRoutes');
 
 routes(app);
 app.listen(port);
