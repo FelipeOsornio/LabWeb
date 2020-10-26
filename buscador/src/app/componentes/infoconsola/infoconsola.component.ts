@@ -9,11 +9,10 @@ import { ConsolasService, Consola } from '../../servicios/consolas.service';
 })
 export class InfoconsolaComponent implements OnInit {
 
-  consola:any = {};
-  idConsola:string;
+  consola: any = {};
+  idConsola: string;
 
-  constructor(private activatedRoute:ActivatedRoute,
-              private consolasService:ConsolasService) {
+  constructor(private activatedRoute: ActivatedRoute, private consolasService: ConsolasService) {
     this.activatedRoute.params.subscribe(params => {
       console.log(params['id']);
       this.consola = this.consolasService.obtieneConsola(params['id']);
@@ -21,7 +20,6 @@ export class InfoconsolaComponent implements OnInit {
     })
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

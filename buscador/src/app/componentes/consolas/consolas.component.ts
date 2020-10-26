@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ConsolasService, Consola} from '../../servicios/consolas.service';
+import { Component, OnInit } from '@angular/core';
+import { ConsolasService, Consola } from '../../servicios/consolas.service';
 
 @Component({
   selector: 'app-consolas',
@@ -10,11 +10,10 @@ export class ConsolasComponent implements OnInit {
 
   consolas: Consola[] = [];
 
-  constructor(private consolasService: ConsolasService) {
-  }
+  constructor(private consolasService: ConsolasService) { }
 
-  ngOnInit() {
-    this.consolas = this.consolasService.obtieneConsolas();
+  async ngOnInit() {
+    this.consolas = await this.consolasService.obtieneConsolas();
     console.log(this.consolas);
   }
 
