@@ -1,0 +1,55 @@
+<br>
+<form [formGroup]="formulario" (ngSubmit)="guardar()">
+    <div>
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Nombre</label>
+            <div class="col-8">
+                <input class="form-control" [ngClass]="{ 'is-invalid': !formulario.get('nombre').valid && submited}"
+                    type="text" placeholder="Nombre" formControlName="nombre" />
+                <div *ngIf="(formulario.controls['nombre'].errors?.required) && submited" class="form-control-feedback">
+                    Por favor indique el nombre.
+                </div>
+                <div *ngIf="formulario.controls['nombre'].errors?.minlength && submited" class="form-control-feedback">
+                    El nombre debe contener por lo menos cinco caracteres.
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Entrada</label>
+            <div class="col-8">
+                <textarea class="form-control" [ngClass]="{ 'is-invalid': !formulario.get('entrada').valid && submited}"
+                    type="textarea" placeholder="escribe algo..." formControlName="entrada">
+            </textarea>
+
+                <div *ngIf="(formulario.controls['entrada'].errors?.minlength || formulario.controls['entrada'].errors?.required)&& submited"
+                    class="form-control-feedback">
+                    El campo debe contener al menos 10 caracteres.
+                </div>
+                <div *ngIf="formulario.controls['entrada'].errors?.maxlength && submited" class="form-control-feedback">
+                    El campo debe contener maximo 30 caracteres.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">&nbsp;</label>
+        <div class="input-group col-md-8">
+            <button type="submit" class="btn btn-outline-primary">
+                Publicar
+            </button>
+        </div>
+    </div>
+</form>
+<hr>
+<div>
+   
+        <div *ngFor="let entry of posts">
+            <h3>{{entry.nombre}}</h3>
+            <h5>{{dateTime | date:'medium'}}</h5>
+            <p>{{entry.entrada}}</p>
+            <hr>
+        </div>
+       
+</div>
