@@ -13,8 +13,12 @@ export class ConsolasComponent implements OnInit {
   constructor(private consolasService: ConsolasService) { }
 
   async ngOnInit() {
-    this.consolas = await this.consolasService.obtieneConsolas();
-    console.log(this.consolas);
+    try {
+      this.consolas = await this.consolasService.inicializarConsolas();
+      console.log(this.consolas);
+    } catch (e) {
+      console.log(e)
+    }
   }
 
 }

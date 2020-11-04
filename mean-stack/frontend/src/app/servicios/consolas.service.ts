@@ -6,9 +6,11 @@ export class ConsolasService {
 
   private consolas: Consola[];
 
-  async inicializarConsolas() {
+  async inicializarConsolas(): Promise<Consola[]> {
     try {
       const response = await Axios.get('http://localhost:8080/consolas');
+
+      console.log(response.data)
 
       const formatJuego = (juego: any): {
         imagen: string;
@@ -40,15 +42,19 @@ export class ConsolasService {
         }
       }
 
-      this.consolas = response.data.map((item: any) => formatConsola(item));
+      return response.data.map((item: any) => formatConsola(item));
     } catch (e) {
       console.log(e);
-      this.consolas = [];
+      return [];
     }
   }
 
+  async asignarValores() {
+    this.consolas = await this.inicializarConsolas()
+  }
+
   constructor() {
-    this.inicializarConsolas();
+    this.asignarValores()
   }
 
   async obtieneConsolas() {
